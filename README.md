@@ -4,7 +4,9 @@ The repository contains scripts used for data analysis and visualization for the
 It contains a fully reproducible R analysis pipeline used to harmonise fish consumption data, prepare biomonitoring datasets, fit mixed-effects models, and quantify attenuation of calendar year effect in urinary mercury concentrations by dental amalgams.
 # Instructions
 
-Before running any script, open R/config.R and ste the path to your project: PROJECT_DIR <- "PATH/TO/YOUR/PROJECT". All input, derived, and output directories are defined relative to this path.
+Before running any script, open R/config.R and set the path to your project: PROJECT_DIR <- "PATH/TO/YOUR/PROJECT". 
+
+All input, derived, and output directories are defined relative to this path.
 
 The analysis is organised into 6 sequential scripts. They should be run in numerical order.
 
