@@ -30,20 +30,24 @@ Before running any script:
 ---
   
 **01 - Fish consumption harmonization**
+
 Open **`R/01_fish_hbmii_montecarlo.R`**
 
 Purpose:
 - Harmonises HBM-II fish consumption frequency data
 - Aggregates multiple fish types using Monte Carlo simulation
+
 Output:
 - derived/hbmii_fish_harmonised.rds
 - derived/hbmii_fish_harmonised.xlsx
 
 **02 - BMI Z-scores calculation (pooled dataset)**
+
 Open **`R/02_bmi_zscores.R`**
 
 Purpose:
 - Computes BMI z-scores using age- and sex-standardisation
 - Based on WHO growth references
+
 Output:
 - Derived BMI z-scores saved to derived/
