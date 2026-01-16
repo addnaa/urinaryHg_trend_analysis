@@ -12,7 +12,8 @@ The analysis is organised into 6 sequential scripts. They should be run in numer
 
 01 - Fish Consumption Harmonization (HBM-II data only)
   
-  01_fish_hbmii_montecarlo.R
+  
+   01_fish_hbmii_montecarlo.R
    
    Harmonises HBM-II fish consumption frequency data
    
@@ -29,7 +30,8 @@ The analysis is organised into 6 sequential scripts. They should be run in numer
 
 02 - BMI z-score calculation (for the pooled dataset)
   
-  02_bmi_z_calculation.R
+  
+   02_bmi_z_calculation.R
 
    Computes BMI z-scores using age- and sex-standardisation (based on WHO)
     
@@ -40,7 +42,7 @@ The analysis is organised into 6 sequential scripts. They should be run in numer
 
 03 - Prepare Analysis Dataset
    
-   03_prepare_analysis_dataset.R
+    03_prepare_analysis_dataset.R
     
     Merges harmonised fish data, BMI z-scores, and biomonitoring data
     
@@ -60,7 +62,7 @@ The analysis is organised into 6 sequential scripts. They should be run in numer
 
 04 - Mixed-Effects Models (CC + MI)
   
-  04_models_cc_mi.R
+   04_models_cc_mi.R
     
     Fits a sequential set of linear mixed-effects models:
       Calendar year only
@@ -84,7 +86,7 @@ The analysis is organised into 6 sequential scripts. They should be run in numer
 
 05 - Master Coefficient Tables
   
-  05_tables_master_coefficients.R
+   05_tables_master_coefficients.R
     
     Produces complete coefficient tables for all models:
       Complete case (CC)
@@ -103,7 +105,7 @@ The analysis is organised into 6 sequential scripts. They should be run in numer
 
 06 - Attenuation of Calendar-Year Effect
   
-  06_attenuation_year_effect.R
+   06_attenuation_year_effect.R
     
     Quantifies attenuation of the calendar-year effect across models
     
