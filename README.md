@@ -51,3 +51,47 @@ Purpose:
 
 Output:
 - Derived BMI z-scores saved to derived/
+
+**03 - Preparation of analysis dataset**
+
+Open **`R/03_prepare_analysis_dataset.R`**
+
+Purpose: 
+- Merges harmonized fish data, BMI z-scores, and biomonitoring data
+
+Key steps: 
+- variable recoding, factor harmonization, centring of covariates, log-transformations
+
+Creates:
+- full analysis dataset
+- complete-case dataset (for CC models)
+
+Outputs: 
+- derived/analysis_dat.rds
+- derived/analysis_dat_complete_cases.rds
+
+**04 - Mixed-effects models (complete-case and multiple imputation)**
+
+Open **`R/04_models_cc_mi.R`**
+
+Purpose: 
+- Fits a sequential set of linear mixed-effects models with following predictors:
+  - calendar year only
+  - covariates
+  - fish consumption
+  - dental amalgams 
+
+- Follows with interaction models for investigating effect modification (time x fish consumption, time x amalgam presence (yes/no) and time x amalgam number)
+- Performs multiple imputation (MI) as a sensitivity analysis and fits the same models on MI dataset
+
+Extracts:
+- Fixed effects on the log scale
+- Wald confidence intervals
+- AIC(BIC
+- CC vs MI comparison for the year effect
+
+Outputs:
+- outputs/cc_fixed_all.rds
+- outputs/mi_fixed_all.rds
+- outputs/aicbic_cc.rds
+- outputs/aicbic_mi.rds
