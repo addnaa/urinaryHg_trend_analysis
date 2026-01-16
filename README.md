@@ -4,39 +4,38 @@ The repository contains scripts used for data analysis and visualization for the
 It contains a fully reproducible R analysis pipeline used to harmonise fish consumption data, prepare biomonitoring datasets, fit mixed-effects models, and quantify attenuation of calendar year effect in urinary mercury concentrations by dental amalgams.
 # Instructions
 
-Before running any script, open R/config.R and set the path to your project: PROJECT_DIR <- "PATH/TO/YOUR/PROJECT". 
+##Before running any script, open R/config.R and set the path to your project: PROJECT_DIR <- "PATH/TO/YOUR/PROJECT". 
 
-All input, derived, and output directories are defined relative to this path.
+##All input, derived, and output directories are defined relative to this path.
 
-The analysis is organised into 6 sequential scripts. They should be run in numerical order.
+##The analysis is organised into 6 sequential scripts. They should be run in numerical order.
 
-01 - Fish Consumption Harmonization (HBM-II data only)
+###01 - Fish Consumption Harmonization (HBM-II data only)
   
-  01_fish_hbmii_montecarlo.R
+####01_fish_hbmii_montecarlo.R
    
-    Harmonises HBM-II fish consumption frequency data
+####Harmonises HBM-II fish consumption frequency data
    
-    Uses Monte Carlo simulation to aggregate multiple fish types
+####Uses Monte Carlo simulation to aggregate multiple fish types
     
-    Produces a three-level fish consumption variable:
+####Produces a three-level fish consumption variable:
       A: < 1 meal/month
       B: 1–3 meals/month
       C: > 3 meals/month
     
-    Outputs: 
+####Outputs: 
       derived/hbmii_fish_harmonised.rds
       derived/hbmii_fish_harmonised.xlsx
 
-02 - BMI z-score calculation (for the pooled dataset)
+###02 - BMI z-score calculation (for the pooled dataset)
   
-   02_bmi_z_calculation.R
+####02_bmi_z_calculation.R
 
+####Computes BMI z-scores using age- and sex-standardisation (based on WHO)
     
-    Computes BMI z-scores using age- and sex-standardisation (based on WHO)
+####Implemented fully in R for transparency and reproducibility
     
-    Implemented fully in R for transparency and reproducibility
-    
-    Outputs:
+####Outputs:
        Derived BMI z-score variables saved to derived/
 
 03 - Prepare Analysis Dataset
