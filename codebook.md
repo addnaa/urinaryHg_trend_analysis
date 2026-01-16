@@ -94,14 +94,14 @@ Primary analyses were conducted using complete-case datasets. Multiple imputatio
 ---
 ## 9. Mapping of conceptual models to implemented R models
 
-| Conceptual model    | Description                       | Model object name in R | R script                 |
-|---------------------|-----------------------------------|------------------------|--------------------------|
-| Model 1             | Unadjusted temporal trend         | m1_year                | 05_models_main.R         |
-| Model 2             | Adjusted for covariates           | m2_covars              | 05_models_main.R         |
-| Model 3             | Model 2 + amalgam number          | m3_amalgam             | 05_models_main.R         |
-| Model 4             | Year x fish interaction           | m4_fish                | 06_models_interactions.R |
-| Model 5             | Model 4 + year x amalgam (binary) | m5_year_amalgam_bin    | 06_models_interactions.R |
-| Model 6             | Model 4 + year x amalgam number   | m6_year_amalgam_n      | 06_models_interactions.R |
+| Conceptual model    | Description                       | Model object name in R | R script                |
+|---------------------|-----------------------------------|------------------------|-------------------------|
+| Model 1             | Unadjusted temporal trend         | m_00                   | 04_models_CC_MI         |
+| Model 2             | Adjusted for covariates           | m_1                    | 04_models_CC_MI         |
+| Model 3             | Model 2 + amalgam number          | m_2                    | 04_models_CC_MI         |
+| Model 4             | Model 3 + year x fish interaction | m3_cat                 | 04_models_CC_MI         |
+| Model 5             | Model 4 + year x amalgam (binary) | m3_cat_int             | 04_models_CC_MI         |
+| Model 6             | Model 4 + year x amalgam number   | m5_num                 | 04_models_CC_MI         |
 
 ## 10. Related analysis scripts
 
