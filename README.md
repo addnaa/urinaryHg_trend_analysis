@@ -12,10 +12,10 @@ The analysis is based on pooled data from four human biomonitoring (HBM) studies
 - SLO-HBM-II  (2018-24)
 
 The pipeline is fully reproducible and covers:
-- Harmonisation of fish consumption data  
-- Preparation of biomonitoring datasets  
-- Fitting of mixed-effects models  
-- Quantification of attenuation of the calendar-year effect in urinary mercury concentrations attributable to dental amalgams  
+- harmonisation of fish consumption data  
+- preparation of biomonitoring datasets  
+- fitting of mixed-effects models  
+- quantification of attenuation of the calendar-year effect in urinary mercury concentrations attributable to dental amalgams  
 
 ---
 
@@ -34,8 +34,8 @@ Before running any script:
 Open **`R/01_fish_hbmii_montecarlo.R`**
 
 Purpose:
- - Harmonises HBM-II fish consumption frequency data
- - Aggregates multiple fish types using Monte Carlo simulation
+ - harmonises HBM-II fish consumption frequency data
+ - aggregates multiple fish types using Monte Carlo simulation
 
 Output:
  - derived/hbmii_fish_harmonised.rds
@@ -48,11 +48,11 @@ Output:
 Open **`R/02_bmi_zscores.R`**
 
 Purpose:
- - Computes BMI z-scores using age- and sex-standardisation
- - Based on WHO growth references
+ - computes BMI z-scores using age- and sex-standardisation
+ - caculation is based on WHO growth references
 
 Output:
- - Derived BMI z-scores saved to derived/
+ - derived BMI z-scores saved to derived/
 
 ---
 
@@ -61,7 +61,7 @@ Output:
 Open **`R/03_prepare_analysis_dataset.R`**
 
 Purpose: 
- - Merges harmonized fish data, BMI z-scores, and biomonitoring data
+ - merges harmonized fish data, BMI z-scores, and biomonitoring data
 
 Key steps: 
  - variable recoding, factor harmonization, centring of covariates, log-transformations
