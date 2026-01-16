@@ -190,5 +190,7 @@ Output:
  - outputs/tables/summary_statistics_by_study.xlsx
  - outputs/tables/summary_statistics_by_study_and_year.xlsx
 
+---
 
+Prepared by: Adna Alilović Osolin
 
