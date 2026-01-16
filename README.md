@@ -31,6 +31,7 @@ Before running any script:
   
 01 - Fish consumption harmonization
 1. Open **`R/01_fish_hbmii_montecarlo.R`**
+
 Purpose
 - Harmonises HBM-II fish consumption frequency data
 - Aggregates multiple fish types using Monte Carlo simulation
