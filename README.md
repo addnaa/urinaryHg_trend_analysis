@@ -137,3 +137,58 @@ Calculates:
 
 Output:
  - attenuation tables in Excel
+ - 
+
+ ---
+
+**07 & 08 - Plotting the time trends (overall and separately in Idrija and Ljubljana)**
+
+Open **`R/07_plotting_overall_trends.R`** or **`R/07_plotting_town_trends.R`**
+
+Purpose:
+- visualize trends in urinary Hg concentrations over the years, in relation to percentage children with amalgam and percentage distribution of children across fish consumption categories 
+
+Input: 
+- derived/analysis_dat.rds
+  
+Output:
+- outputs/figures/uHg_ngml_trend_percentages_national.svg
+- outputs/figures/uHg_creat_trend_percentages_national.svg
+- outputs/figures/uHg_ngml_trend_percentages_Idrija.svg
+- outputs/figures/uHg_creat_trend_percentages_Idrija.svg
+- outputs/figures/uHg_ngml_trend_percentages_Ljubljana.svg
+- outputs/figures/uHg_creat_trend_percentages_Ljubljana.svg
+
+Each figure overlays:
+- urinary Hg distribution
+  - median (points)
+  - interquartile range (error bars)
+- exposure indicators (percentages)
+  - stacked bars for fish consumption categories
+  - separate bars for amalgam prevalence
+- dual y-axis
+  - left: urinary Hg concentration
+  - right: percentage of children
+  
+---
+
+**09 - Summary statistics and descriptives**
+
+Open **`R/09_summary statistics and descriptives.R`**
+
+Purpose:
+ - provide transparent reporting of data completeness (number and percentage of missing values for urinary Hg variables, amalgam presence/number, fish consumption, age, sex, BMI)
+ - summarize distributions of urinary Hg biomarkers (descriptive stats for urinary Hg variables) 
+ - describe key exposure variables and covariates used in modeling (descriptive stats for amalgams, fish consumption, age, sex, BMI)
+
+Input: 
+ - derived/analysis_dat.rds
+
+Output:
+ - outputs/tables/missing_data_y_year.xlsx
+ - outputs/tables/data_completeness_by_study.xlsx
+ - outputs/tables/summary_statistics_by_study.xlsx
+ - outputs/tables/summary_statistics_by_study_and_year.xlsx
+
+
+
