@@ -1,9 +1,13 @@
 # Analysis of trends in urinary Hg concentrations in Slovenian children, from 2007 until 2024, based on data from 4 HBM studies (PHIME, DEMOCOPHES, CROME, SLO-HBM-II). 
 The repository contains scripts used for data analysis and visualization for the paper "Human Biomonitoring in the Support of Minamata Convention: A case of Phasing out Dental Amalgam", published in Environmental Health.
+
 It contains a fully reproducible R analysis pipeline used to harmonise fish consumption data, prepare biomonitoring datasets, fit mixed-effects models, and quantify attenuation of calendar year effect in urinary mercury concentrations by dental amalgams.
 # Instructions
+
 Before running any script, open R/config.R and ste the path to your project: PROJECT_DIR <- "PATH/TO/YOUR/PROJECT". All input, derived, and output directories are defined relative to this path.
+
 The analysis is organised into 6 sequential scripts. They should be run in numerical order.
+
 01 - Fish Consumption Harmonization (HBM-II data only)
   01_fish_hbmii_montecarlo.R
     Harmonises HBM-II fish consumption frequency data
