@@ -34,64 +34,106 @@ Before running any script:
 Open **`R/01_fish_hbmii_montecarlo.R`**
 
 Purpose:
-- Harmonises HBM-II fish consumption frequency data
-- Aggregates multiple fish types using Monte Carlo simulation
+ - Harmonises HBM-II fish consumption frequency data
+ - Aggregates multiple fish types using Monte Carlo simulation
 
 Output:
-- derived/hbmii_fish_harmonised.rds
-- derived/hbmii_fish_harmonised.xlsx
+ - derived/hbmii_fish_harmonised.rds
+ - derived/hbmii_fish_harmonised.xlsx
+
+---
 
 **02 - BMI Z-scores calculation (pooled dataset)**
 
 Open **`R/02_bmi_zscores.R`**
 
 Purpose:
-- Computes BMI z-scores using age- and sex-standardisation
-- Based on WHO growth references
+ - Computes BMI z-scores using age- and sex-standardisation
+ - Based on WHO growth references
 
 Output:
-- Derived BMI z-scores saved to derived/
+ - Derived BMI z-scores saved to derived/
+
+---
 
 **03 - Preparation of analysis dataset**
 
 Open **`R/03_prepare_analysis_dataset.R`**
 
 Purpose: 
-- Merges harmonized fish data, BMI z-scores, and biomonitoring data
+ - Merges harmonized fish data, BMI z-scores, and biomonitoring data
 
 Key steps: 
-- variable recoding, factor harmonization, centring of covariates, log-transformations
+ - variable recoding, factor harmonization, centring of covariates, log-transformations
 
 Creates:
-- full analysis dataset
-- complete-case dataset (for CC models)
+ - full analysis dataset
+ - complete-case dataset (for CC models)
 
 Outputs: 
-- derived/analysis_dat.rds
-- derived/analysis_dat_complete_cases.rds
+ - derived/analysis_dat.rds
+ - derived/analysis_dat_complete_cases.rds
+
+---
 
 **04 - Mixed-effects models (complete-case and multiple imputation)**
 
 Open **`R/04_models_cc_mi.R`**
 
 Purpose: 
-- Fits a sequential set of linear mixed-effects models with following predictors:
+ - Fits a sequential set of linear mixed-effects models with following predictors:
   - calendar year only
   - covariates
   - fish consumption
   - dental amalgams 
 
-- Follows with interaction models for investigating effect modification (time x fish consumption, time x amalgam presence (yes/no) and time x amalgam number)
-- Performs multiple imputation (MI) as a sensitivity analysis and fits the same models on MI dataset
+ - Follows with interaction models for investigating effect modification (time x fish consumption, time x amalgam presence (yes/no) and time x amalgam number)
+ - Performs multiple imputation (MI) as a sensitivity analysis and fits the same models on MI dataset
 
 Extracts:
-- Fixed effects on the log scale
-- Wald confidence intervals
-- AIC(BIC
-- CC vs MI comparison for the year effect
+ - fixed effects on the log scale
+ - Wald confidence intervals
+ - AIC(BIC
+ - CC vs MI comparison for the year effect
 
 Outputs:
-- outputs/cc_fixed_all.rds
-- outputs/mi_fixed_all.rds
-- outputs/aicbic_cc.rds
-- outputs/aicbic_mi.rds
+ - outputs/cc_fixed_all.rds
+ - outputs/mi_fixed_all.rds
+ - outputs/aicbic_cc.rds
+ - outputs/aicbic_mi.rds
+
+---
+
+**05 - Master coefficient tables**
+
+Open **`R/05_tables_master_ciefficients.R`**
+
+Purpose:
+ - Produces complete coefficient tables for all models (complete case and multiple imputation)
+
+Reports:
+ - effects on log scale (β)
+ - effects on multiplicative scale (RR = exp(β))
+ - correct SE(RR) via the delta method
+ - confidence intervals on the RR scale
+
+Outputs:
+ - outputs/tables/Coefficients_ALL_MODELS_CC.xlsx
+ - outputs/tables/Coefficients_ALL_MODELS_MI.xlsx
+
+---
+
+**06 - Attenuation of the year effect**
+
+Open **`R/06_attenuation_year_effect.R`**
+
+Purpose:
+ - quantifies attenuation of the calendar-year effect by addition of covariates/dental amalgams
+
+Calculates:
+ - percentage attenuation relative to the base model
+ - variance components and intraclass correlation coefficients (ICC)
+ - uses raw log-scale coefficients for attenuation calculations
+
+Output:
+ - attenuation tables in Excel
