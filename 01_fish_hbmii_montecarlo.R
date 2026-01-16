@@ -4,15 +4,16 @@
 # Purpose:
 #   Harmonise HBM-II fish consumption data into a
 #   three-level variable (A, B, C) using Monte-Carlo
-#   simulation across fish types.
+#   simulation across fish types. The initial dataset
+#   had consumption divided by fish type, and in 8 levels of consumption.
 #
-# Categories:
+# Wanted categories:
 #   A = <1 meal / month
 #   B = 1–3 meals / month
 #   C = >3 meals / month
 #
 # Input:
-#   data/hbmii_fish_raw.xlsx    = HBM-II dataset with fish categories as they are
+#   data/hbmii_fish_raw.xlsx    = HBM-II dataset with fish categories as they are (8 levels of consumption from never to multiple/day)
 #
 # Output:
 #   derived/hbmii_fish_harmonised.xlsx    = HBM-II dataset with new fish categories
@@ -37,8 +38,8 @@ source("R/config.R")
 ## ==========================
 ## 2. Read HBM-II fish data
 ## ==========================
-dat <- read.xlsx(
-  file.path(INPUT_DIR, "hbmii_fish_raw.xlsx"),
+dat <- read.xlsx(                            
+  file.path(INPUT_DIR, "hbmii_fish_raw.xlsx"),            # Path to the directory where data is needs to be entered (INPUT_DIR)
   sheet = 1
 )
 
@@ -132,3 +133,4 @@ write.xlsx(
 )
 
 cat("HBM-II fish harmonisation completed.\n")
+
