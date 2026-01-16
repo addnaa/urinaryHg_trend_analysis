@@ -2,7 +2,12 @@
 # R/config.R
 # ============================================================
 # Project configuration
-# Edit PROJECT_DIR to match your local setup
+# IMPORTANT:
+#   Replace PROJECT_DIR with the local path where this
+#   repository is stored on your computer.
+#
+# Example:
+#   PROJECT_DIR <- "C:/Users/yourname/Documents/Hg_Project"
 # ============================================================
 
 PROJECT_DIR <- "PATH/TO/YOUR/PROJECT"     # You edit this line to match your local setup
@@ -15,4 +20,5 @@ OUTPUT_DIR  <- file.path(PROJECT_DIR, "outputs")
 dir.create(INPUT_DIR,   showWarnings = FALSE, recursive = TRUE)
 dir.create(DERIVED_DIR, showWarnings = FALSE, recursive = TRUE)
 dir.create(OUTPUT_DIR,  showWarnings = FALSE, recursive = TRUE)
+
 
