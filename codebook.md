@@ -92,8 +92,18 @@ Missing data were primarily present in the PHIME study, while the remaining stud
 Primary analyses were conducted using complete-case datasets. Multiple imputation was used as a sensitivity analysis.
 
 ---
+## 9. Mapping of conceptual models to implemented R models
 
-## 9. Related analysis scripts
+| Conceptual model    | Description                       | Model object name in R | R script                 |
+|---------------------|-----------------------------------|------------------------|--------------------------|
+| Model 1             | Unadjusted temporal trend         | m1_year                | 05_models_main.R         |
+| Model 2             | Adjusted for covariates           | m2_covars              | 05_models_main.R         |
+| Model 3             | Model 2 + amalgam number          | m3_amalgam             | 05_models_main.R         |
+| Model 4             | Year x fish interaction           | m4_fish                | 06_models_interactions.R |
+| Model 5             | Model 4 + year x amalgam (binary) | m5_year_amalgam_bin    | 06_models_interactions.R |
+| Model 6             | Model 4 + year x amalgam number   | m6_year_amalgam_n      | 06_models_interactions.R |
+
+## 10. Related analysis scripts
 
 - `01_fish_hbmii_montecarlo.R` - Fish consumption harmonisation  
 - `02_bmi_z_calculation.R` - BMI z-score calculation  
